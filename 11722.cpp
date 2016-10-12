@@ -1,23 +1,28 @@
 #include <cstdio>
+int num[1001];
+int memo[1001];
+int main() {
+    int n;
+    scanf("%d",&n);
 
-int num[1000]={0,};
-int len[1000]={0,};
-int N;
+    for (int i=0; i<n; i++)
+        scanf("%d",&num[i]);
+    
+    for (int i=n-1; i>=0; i--) {
+        memo[i] = 1;
+        for (int j=i+1; j<=n; j++) {
+            if (num[i] > num[j] && memo[j] + 1 > memo[i]) {
+                memo[i] = memo[j]+1;
+            }
+        }
+    }
 
-int main(){	
-	scanf("%d",&N);
-	for(int i = 0 ; i < N ; i++)
-		scanf("%d",num[i]);
-
-	int max;
-	len[0] = 1;
-	for(int i = 0 ; i < N ; i++){
-		max = num[i];
-		for(int j = i + 1 ; j < N ; j++){
-			if(max > num[j]){
-				
-			}
-		}
-	}
-	return 0;
+    int ret = 0;
+    for (int i=0; i< n; i++) {
+        if (ret < memo[i]) {
+            ret = memo[i];
+        }
+    }
+    printf("%d\n",ret);
+    return 0;
 }
