@@ -1,9 +1,4 @@
-# acmicpc
+# [Baekjoon Online judge](https://www.acmicpc.net/)
 
- - 출처
 
-www.acmicpc.com
-
- - 푼문제
-
-https://www.acmicpc.net/user/gnujoow
+ - [@gnujoow](https://www.acmicpc.net/user/gnujoow)
